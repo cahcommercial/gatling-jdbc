@@ -18,4 +18,7 @@ jobs:
       with:
         java-version: 1.11
     - name: Run tests
-      run: sbt -V
+      run: sbt test
+    - name: Publish artifacts
+      env: GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: sbt publish
