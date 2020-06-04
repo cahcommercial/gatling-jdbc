@@ -1,6 +1,10 @@
 # Gatling JDBC Extension
 JDBC support for Gatling
 
+## :exclamation: Attention :exclamation:
+
+This repository contains a workaround that is being used to ensure explicit inserts can be done on a SqlServer database.
+
 [![Build Status](https://travis-ci.org/rbraeunlich/gatling-jdbc.svg?branch=master)](https://travis-ci.org/rbraeunlich/gatling-jdbc)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/dev.code_n_roll.gatling/jdbc-gatling_2.12/badge.svg)](https://maven-badges.herokuapp.com/maven-central/dev.code_n_roll.gatling/jdbc-gatling_2.12)
 
