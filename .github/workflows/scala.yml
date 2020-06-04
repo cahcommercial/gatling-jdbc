@@ -20,5 +20,6 @@ jobs:
     - name: Run tests
       run: sbt test
     - name: Publish artifacts
-      env: GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: sbt publish
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
