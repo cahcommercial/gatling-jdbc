@@ -27,33 +27,6 @@ developers := List(Developer("g-fuse-knextors",
 )
 licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0"))
 
-credentials +=
-  Credentials(
-    "GitHub Package Registry",
-    "maven.pkg.github.com",
-    "_",
-    sys.env.getOrElse("GITHUB_TOKEN", "N/A")
-  )
-// githubTokenSource := TokenSource.Environment("GITHUB_TOKEN")
-// Add sonatype repository settings
-// publishTo := Some(
-//   if (isSnapshot.value)
-//     Opts.resolver.sonatypeSnapshots
-//   else
-//     Opts.resolver.sonatypeStaging
-// )
-// credentials += Credentials(Path.userHome / ".sbt" / ".sonatype_credentials")
-
-publishTo := {
-  val github = "https://maven.pkg.github.com/cahcommercial/gatling-jdbc"
-  Some(github)
-}
-
-// sonatypeProfileName := "r.braeunlich"
-pomIncludeRepository := { _ => false }
-publishArtifact in Test := false
-publishMavenStyle := true
-publishConfiguration := publishConfiguration.value.withOverwrite(true)
-publishLocalConfiguration := publishLocalConfiguration.value.withOverwrite(true)
-// releasePublishArtifactsAction := PgpKeys.publishSigned.value
-// releaseProcess += releaseStepCommand("sonatypeReleaseAll")
+githubOwner := "cahcommercial"
+githubRepository := "gatling-jdbc"
+githubTokenSource := TokenSource.Environment("GITHUB_TOKEN")
