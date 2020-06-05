@@ -27,6 +27,10 @@ developers := List(Developer("g-fuse-knextors",
 )
 licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0"))
 
+githubOwner := "cahcommercial"
+githubRepository := "gatling-jdbc"
+
+githubTokenSource := TokenSource.Environment("GITHUB_TOKEN")
 // Add sonatype repository settings
 // publishTo := Some(
 //   if (isSnapshot.value)
@@ -36,11 +40,11 @@ licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0"))
 // )
 // credentials += Credentials(Path.userHome / ".sbt" / ".sonatype_credentials")
 
-publishTo := {
-  val nexus = "https://artifacts.cahcommtech.com/"
-  if (isSnapshot.value) Some("snapshots" at nexus + "content/repositories/thirdparty")
-  else Some("releases" at nexus + "content/repositories/thirdparty")
-}
+// publishTo := {
+//   val nexus = "https://artifacts.cahcommtech.com/"
+//   if (isSnapshot.value) Some("snapshots" at nexus + "content/repositories/thirdparty")
+//   else Some("releases" at nexus + "content/repositories/thirdparty")
+// }
 
 // sonatypeProfileName := "r.braeunlich"
 pomIncludeRepository := { _ => false }
