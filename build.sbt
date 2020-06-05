@@ -35,7 +35,7 @@ credentials +=
     "maven.pkg.github.com",
     "_",
     sys.env.getOrElse("GITHUB_TOKEN", "N/A")
-  ),
+  )
 // githubTokenSource := TokenSource.Environment("GITHUB_TOKEN")
 // Add sonatype repository settings
 // publishTo := Some(
