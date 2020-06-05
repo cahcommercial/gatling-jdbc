@@ -29,6 +29,13 @@ licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0"))
 
 githubOwner := "cahcommercial"
 githubRepository := "gatling-jdbc"
+credentials +=
+  Credentials(
+    "GitHub Package Registry",
+    "maven.pkg.github.com",
+    "_",
+    sys.env.getOrElse("GITHUB_TOKEN", "N/A")
+  ),
 // githubTokenSource := TokenSource.Environment("GITHUB_TOKEN")
 // Add sonatype repository settings
 // publishTo := Some(
@@ -40,7 +47,7 @@ githubRepository := "gatling-jdbc"
 // credentials += Credentials(Path.userHome / ".sbt" / ".sonatype_credentials")
 
 // publishTo := {
-//   val nexus = "https://artifacts.cahcommtech.com/"
+//   val github = "https://artifacts.cahcommtech.com/"
 //   if (isSnapshot.value) Some("snapshots" at nexus + "content/repositories/thirdparty")
 //   else Some("releases" at nexus + "content/repositories/thirdparty")
 // }
