@@ -27,8 +27,6 @@ developers := List(Developer("g-fuse-knextors",
 )
 licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0"))
 
-githubOwner := "cahcommercial"
-githubRepository := "gatling-jdbc"
 credentials +=
   Credentials(
     "GitHub Package Registry",
@@ -46,11 +44,10 @@ credentials +=
 // )
 // credentials += Credentials(Path.userHome / ".sbt" / ".sonatype_credentials")
 
-// publishTo := {
-//   val github = "https://artifacts.cahcommtech.com/"
-//   if (isSnapshot.value) Some("snapshots" at nexus + "content/repositories/thirdparty")
-//   else Some("releases" at nexus + "content/repositories/thirdparty")
-// }
+publishTo := {
+  val github = "https://maven.pkg.github.com/cahcommercial/gatling-jdbc"
+  Some(github)
+}
 
 // sonatypeProfileName := "r.braeunlich"
 pomIncludeRepository := { _ => false }
