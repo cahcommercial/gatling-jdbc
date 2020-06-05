@@ -21,9 +21,7 @@ jobs:
       run: sbt test
       env:
         GITHUB_TOKEN: ${{ secrets.CAH_PUBLISH }}
-        GITHUB_ACTOR: "${{ github.actor }}"
     - name: Publish artifacts
       run: sbt publish
       env:
         GITHUB_TOKEN: ${{ secrets.CAH_PUBLISH }}
-        GITHUB_ACTOR: ${{ github.actor }}
