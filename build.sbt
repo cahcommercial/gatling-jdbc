@@ -1,6 +1,7 @@
 organization := "com.cah.commtech"
 name := "jdbc-gatling"
 scalaVersion := "2.12.8"
+crossPaths := false
 libraryDependencies ++= Seq(
   "io.gatling.highcharts" % "gatling-charts-highcharts" % "3.2.1",
   "io.gatling"            % "gatling-test-framework"    % "3.2.1",
