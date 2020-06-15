@@ -1,5 +1,15 @@
 package dev.code_n_roll.gatling.jdbc.action
 
+import io.gatling.commons.util.Clock
+import io.gatling.commons.validation.{Success, Validation}
+import io.gatling.core.action.Action
+import io.gatling.core.session.{Expression, Session}
+import io.gatling.core.stats.StatsEngine
+import scalikejdbc.{DB, SQL}
+
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.Future
+
 case class JdbcUpdateAction(requestName: Expression[String],
                             tableName: Expression[String],
                             values: Expression[String],
