@@ -12,6 +12,8 @@ case class JdbcActionBuilderBase(requestName: Expression[String]) {
 
   def insert() = JdbcInsertionBuilderBase(requestName)
 
+  def update() = JdbcUpdateBuilderBase(requestName)
+
   def select(what: Expression[String]) = JdbcSelectionBuilderBase(requestName, what)
 
   def drop() = JdbcTableDropBuilderBase(requestName)
